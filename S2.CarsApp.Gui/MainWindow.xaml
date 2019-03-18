@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:S2.CarsApp.Gui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Bilprogrammet"
+        Height="400"
+        Width="400">
+  <Grid>
+    <StackPanel>
+      <Button x:Name="button"
+              Content="Hent alle blier"
+              Height="50"
+              Width="100"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Left"
+              Click="Button_Click" />
+      <DataGrid x:Name="dataGrid" />
+      <TextBox x:Name="textBoxId" Width="100" HorizontalAlignment="Left"/>
+      <TextBox x:Name="textBoxMake"
+               Width="100"
+               HorizontalAlignment="Left" />
+
+      <TextBox x:Name="textBoxModel"
+               Width="100"
+               HorizontalAlignment="Left" />
+
+      <TextBox x:Name="textBoxLicencePlate"
+               Width="100"
+               HorizontalAlignment="Left" />
+      <Button x:Name="buttonSave"
+              Content="Gem"
+              HorizontalAlignment="Left"
+              Click="ButtonSave_Click" />
+
+    </StackPanel>
+  </Grid>
 </Window>

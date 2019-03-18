@@ -94,5 +94,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\S2.Cars.DataAccess\S2.Cars.DataAccess.csproj">
+      <Project>{469dac87-199e-4faa-b7c5-8c2a02c3d073}</Project>
+      <Name>S2.Cars.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\S2.CarsApp.Entities\S2.CarsApp.Entities.csproj">
+      <Project>{64e890f6-c1a0-42bd-ad4e-97b0b877392d}</Project>
+      <Name>S2.CarsApp.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

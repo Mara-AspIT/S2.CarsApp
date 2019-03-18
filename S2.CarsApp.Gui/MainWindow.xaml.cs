@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using S2.CarsApp.DataAccess;
+using S2.CarsApp.Entities;
+
 namespace S2.CarsApp.Gui
 {
     /// <summary>
@@ -23,6 +26,32 @@ namespace S2.CarsApp.Gui
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CarRepository repository = new CarRepository();
+            dataGrid.ItemsSource = repository.GetAllCars();
+        }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            Car newCar = new Car();
+            if(textBoxId.Text == String.Empty)
+            {
+                MessageBox.Show("Fejl");
+            }
+            else
+            {
+                newCar.Id = Convert.ToInt32(textBoxId.Text);
+                newCar.Make = textBoxMake.Text;
+                newCar.Model = textBoxModel.Text;
+                newCar.LicencePlate = textBoxLicencePlate.Text;
+                CarRepository repository = new CarRepository();
+                repository.Save(newCar);
+                dataGrid.ItemsSource = repository.GetAllCars();
+            }            
         }
     }
 }
